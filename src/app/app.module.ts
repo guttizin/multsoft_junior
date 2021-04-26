@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FilmesListComponent } from './components/filmes-list/filmes-list.component';
+import { FilmeDetailsComponent } from './components/filme-details/filme-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FilmesListComponent } from './components/filmes-list/filmes-list.compon
     // ListTitlesComponent,
     // FooterComponent,
     // TitleComponent,
-    FilmesListComponent
+    FilmesListComponent,
+    FilmeDetailsComponent
   ],
   imports: [
     BrowserModule,

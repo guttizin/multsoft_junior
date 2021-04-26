@@ -1,10 +1,10 @@
 <div class="list row">
-    <div class="col-md-8">
+    <!-- <div class="col-md-8">
       <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
-          placeholder="Search by nome"
+          placeholder="Search by title"
           [(ngModel)]="nome"
         />
         <div class="input-group-append">
@@ -17,7 +17,7 @@
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="col-md-6">
       <h4>Filmes List</h4>
       <ul class="list-group">
@@ -31,23 +31,23 @@
         </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFilmes()">
+      <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllFilmes()">
         Remove All
-      </button>
+      </button> -->
     </div>
     <div class="col-md-6">
       <div *ngIf="currentFilme">
         <h4>Filme</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentFilme.nome }}
+          <label><strong>Nome:</strong></label> {{ currentFilme.nome }}
         </div>
         <div>
-          <label><strong>Description:</strong></label>
+          <label><strong>Resumo:</strong></label>
           {{ currentFilme.resumo }}
         </div>
         <div>
           <label><strong>Status:</strong></label>
-          {{ currentFilme.disponivel ? "Published" : "Pending" }}
+          {{ currentFilme.disponivel ? "Disponível" : "Locado" }}
         </div>
   
         <a class="badge badge-warning" routerLink="/filmes/{{ currentFilme.id }}">
@@ -57,7 +57,7 @@
   
       <div *ngIf="!currentFilme">
         <br />
-        <p>Please click on a Filme...</p>
+        <p>Clique em algum filme...</p>
       </div>
     </div>
   </div>

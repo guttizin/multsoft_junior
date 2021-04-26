@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Filme } from 'src/app/models/filme.models';
-import { FilmesService } from 'src/app/services/filmes.service';
+import { FilmeService } from 'src/app/services/filmes.service';
 
 @Component({
   selector: 'app-filmes-list',
@@ -13,17 +13,17 @@ export class FilmesListComponent implements OnInit {
   currentIndex = -1;
   nome = '';
 
-  constructor(private FilmesService: FilmesService) { }
+  constructor(private filmeService: FilmeService) { }
 
   ngOnInit(): void {
     this.retrieveFilmes();
   }
 
   retrieveFilmes(): void {
-    this.FilmesService.getAll()
+    this.filmeService.getAll()
       .subscribe(
         data => {
-          // this.filmes = data;
+          this.filmes = data;
           console.log(data);
         },
         error => {
@@ -43,7 +43,7 @@ export class FilmesListComponent implements OnInit {
   }
 
   removeAllFilmes(): void {
-    this.FilmesService.deleteAll()
+    this.filmeService.deleteAll()
       .subscribe(
         response => {
           console.log(response);
@@ -55,10 +55,10 @@ export class FilmesListComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.FilmesService.findByTitle(this.nome)
+    this.filmeService.findByTitle(this.nome)
       .subscribe(
         data => {
-          // this.filmes = data;
+          this.filmes = data;
           console.log(data);
         },
         error => {
