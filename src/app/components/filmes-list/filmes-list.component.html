@@ -39,15 +39,15 @@
       <div *ngIf="currentFilme">
         <h4>Filme</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentFilme.title }}
+          <label><strong>Title:</strong></label> {{ currentFilme.nome }}
         </div>
         <div>
           <label><strong>Description:</strong></label>
-          {{ currentFilme.description }}
+          {{ currentFilme.resumo }}
         </div>
         <div>
           <label><strong>Status:</strong></label>
-          {{ currentFilme.published ? "Published" : "Pending" }}
+          {{ currentFilme.disponivel ? "Published" : "Pending" }}
         </div>
   
         <a class="badge badge-warning" routerLink="/filmes/{{ currentFilme.id }}">
